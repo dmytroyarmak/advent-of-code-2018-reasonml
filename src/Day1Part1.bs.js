@@ -2,15 +2,14 @@
 'use strict';
 
 var Fs = require("fs");
-var List = require("bs-platform/lib/js/list.js");
-var $$Array = require("bs-platform/lib/js/array.js");
-var Caml_format = require("bs-platform/lib/js/caml_format.js");
 
-var result = List.fold_left((function (a, b) {
-        return a + b | 0;
-      }), 0, List.map(Caml_format.caml_int_of_string, List.filter((function (line) {
-                  return line !== "";
-                }))($$Array.to_list(Fs.readFileSync("inputs/Day1Part1.txt", "utf8").split("\n")))));
+var result = Fs.readFileSync("inputs/Day1Part1.txt", "utf8").split("\n").filter((function (line) {
+            return line !== "";
+          })).map((function (prim) {
+          return Number(prim);
+        })).reduce((function (a, b) {
+        return a + b;
+      }), 0.0);
 
 console.log(result);
 
