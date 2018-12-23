@@ -1,4 +1,6 @@
-let frequencyChanges = Day1Utils.parseInputFile("inputs/Day1Part2.txt");
+let frequencyChanges =
+  Day1Utils.parseInputFile("inputs/Day1Part2.txt") |> Array.to_list;
+
 let rec findFrequencyReachedTwice =
         (currentFrequency, reachedFrequencies, restFrequencyChanges) =>
   switch (restFrequencyChanges) {

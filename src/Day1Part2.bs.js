@@ -2,9 +2,10 @@
 'use strict';
 
 var List = require("bs-platform/lib/js/list.js");
+var $$Array = require("bs-platform/lib/js/array.js");
 var Day1Utils$AdventOfCode2018Reasonml = require("./Day1Utils.bs.js");
 
-var frequencyChanges = Day1Utils$AdventOfCode2018Reasonml.parseInputFile("inputs/Day1Part2.txt");
+var frequencyChanges = $$Array.to_list(Day1Utils$AdventOfCode2018Reasonml.parseInputFile("inputs/Day1Part2.txt"));
 
 function findFrequencyReachedTwice(_currentFrequency, _reachedFrequencies, _restFrequencyChanges) {
   while(true) {
